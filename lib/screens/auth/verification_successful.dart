@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:finenza_world/screens/dashboard/home_screen.dart';
 import 'package:finenza_world/utils/colors.dart';
 import 'package:finenza_world/utils/images.dart';
 import 'package:flutter/cupertino.dart';
@@ -25,7 +26,7 @@ class _VerificationSuccessfullScreenState extends State<VerificationSuccessfullS
     Timer(
       Duration(seconds: 3),
           () {
-        // Get.off(WalkThroughScreen());
+        Get.off(HomeScreen());
       },
     );
   }
@@ -33,8 +34,7 @@ class _VerificationSuccessfullScreenState extends State<VerificationSuccessfullS
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color(0xFF004E99),
-      backgroundColor: AppColors.appTextPrimaryColor,
+      backgroundColor: AppColors.primaryColor,
       body: Stack(
         children: [
           Positioned(
@@ -54,15 +54,18 @@ class _VerificationSuccessfullScreenState extends State<VerificationSuccessfullS
                       children: [
                         Text(
                             language.lblaccountVerified,
+                            textScaleFactor: 1,
                             style: TextStyle(fontFamily: 'Urbanist-Bold',fontWeight: FontWeight.w700, fontSize: 30,color: Colors.white)
                         ),
                         SizedBox(height: 10),
                         Text(
+                            textScaleFactor: 1,
                             language.lblaccountVerifiedSubTitle1,
                             style: TextStyle(fontFamily: 'Urbanist-Rgular',fontWeight: FontWeight.w400, fontSize: 15, color: Colors.white)
                         ),
                         SizedBox(height: 05),
                         Text(
+                            textScaleFactor: 1,
                             language.lblaccountVerifiedSubTitle2,
                             style: TextStyle(fontFamily: 'Urbanist-Rgular',fontWeight: FontWeight.w400, fontSize: 15, color: Colors.white)
                         ),

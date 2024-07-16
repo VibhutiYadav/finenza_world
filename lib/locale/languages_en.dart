@@ -47,6 +47,9 @@ class LanguagesEn extends BaseLanguage {
   String get lblContinue =>'Continue';
 
   @override
+  String get lblapply => 'Apply Now';
+
+  @override
   String get lblOr =>'OR';
 
   @override
@@ -72,5 +75,74 @@ class LanguagesEn extends BaseLanguage {
 
   @override
   String get lblaccountVerifiedSubTitle2 =>'now let’s enjoy Finenza features!';
+
+  @override
+  String get lblhome =>'Home';
+
+  @override
+  String get lblsearch =>'Search';
+
+  @override
+  String get lblrecent =>'Recent';
+
+  @override
+  String get lblprofile =>'Profile';
+
+  @override
+  String get lblhello =>'👋 Hello, John Doe';
+
+  @override
+  String get lblservices => 'Services';
+
+  @override
+  String get  lblaccTitle1 => 'Open Your 0%';
+
+  @override
+  String get  lblaccSubTitle1 => 'Savings Ac.';
+
+  @override
+  String get  lblaccTitle2 => 'Check Your';
+
+  @override
+  String get  lblaccSubTitle2 => 'CIBIL Score';
+
+  @override
+  String get lblcheckCibilSCore => 'Check your CIBIL Score';
+
+  @override
+  String get lblenterDetail => 'Enter the details below';
+
+  @override
+  String get lblenterName => 'Enter your full name';
+
+  @override
+  String get lblenterDob => 'Enter your DOB';
+
+  @override
+  String get lblenterNum => 'Enter your Mobile Number';
+
+  @override
+  String get lblenterPan => 'Enter your PAN Number';
+
+  @override
+  String get lblenterMail => 'Enter your email address';
+
+  @override
+  String get lblagree => 'I agree with ';
+
+  @override
+  String get lbltermsConditions => 'Terms & Conditions';
+
+  @override
+  String get lblcreditscreen => 'Your credit score insights ';
+
+  @override
+  String get lblfeatures => 'Features';
+
+  @override
+  String get lblloanAmount => 'Loan Amount';
+
+  @override
+  String get lblmaxTenure => 'Maximum Tenure';
 
 }

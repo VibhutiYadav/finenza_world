@@ -38,16 +38,6 @@ class OtpVerificationController extends GetxController {
   void submitOtp() {
     final otpCode = otpController.text.trim();
     Get.off(VerificationSuccessfullScreen());
-    // if (otpCode.isNotEmpty) {
-    //   if (otpCode.length >= 6) {
-    //     isLoading.value = true;
-    //     onTap(otpCode);
-    //   } else {
-    //     showSnackBar(language.lblpleaseEnterValidOTP);
-    //   }
-    // } else {
-    //   showSnackBar(language.lblpleaseEnterValidOTP);
-    // }
   }
 
   void showSnackBar(String message) {

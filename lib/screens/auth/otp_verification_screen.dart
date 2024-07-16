@@ -1,3 +1,4 @@
+import 'package:finenza_world/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,54 +23,43 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
       controller.startTimer();
     });
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: context.theme.scaffoldBackgroundColor,
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarIconBrightness: Get.isDarkMode ? Brightness.light : Brightness.dark,
-          statusBarColor: context.theme.scaffoldBackgroundColor,
-        ),
-      ),
-      body: Center(
-        child: Stack(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  _buildTopWidget(),
-                  SizedBox(height: 60),
-                  _buildOtpDialogWidget(),
-                  SizedBox(height: 10),
-                  Obx(() => Text(
-                    '${language.lblResendCode}: ${controller.start.value}',
-                    style: TextStyle(fontFamily: 'Urbanist-Light', fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black),
-                  )),
-                  SizedBox(height: 50),
-                  MaterialButton(
-                    color: Color(0xFF004E99),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    onPressed: (){
-                      print("on pressed clicked");
-                      controller.submitOtp();
-
-                    },
-                    child: Text(
-                      language.lblContinue,
-                      style: TextStyle(fontFamily: 'Urbanist-Light', fontSize: 18, fontWeight: FontWeight.w400, color: Colors.white,),
-                    ),
-                    minWidth: double.infinity,
-                    height: 60,
-                  ),
-
-                ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(25.0),
+          child: Column(
+            children: [
+              SizedBox(height: 120),
+              _buildTopWidget(),
+              SizedBox(height: 60),
+              _buildOtpDialogWidget(),
+              SizedBox(height: 10),
+              Obx(() => Text(
+                '${language.lblResendCode}: ${controller.start.value}',
+                 textScaleFactor: 1,
+                style: TextStyle(fontFamily: 'Urbanist-Light', fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.appTextPrimaryColor),
+              )),
+              SizedBox(height: 50),
+              MaterialButton(
+                color:AppColors.secondaryColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+                onPressed: (){
+                  print("on pressed clicked");
+                  controller.submitOtp();
+            
+                },
+                child: Text(
+                  language.lblContinue,
+                  textScaleFactor: 1,
+                  style: TextStyle(fontFamily: 'Urbanist-Regular', fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white,),
+                ),
+                minWidth: double.infinity,
+                height: 60,
               ),
-            ),
-            // Observer(
-            //   builder: (_) => LoaderWidget().visible(controller.isLoading.value),
-            // ),
-          ],
+            
+            ],
+          ),
         ),
       ),
     );
@@ -85,13 +75,15 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
         children: [
           Text(
             language.lblOtpTitle,
-            style: TextStyle(fontFamily: 'Urbanist-Bold', fontSize:30, fontWeight: FontWeight.w700, color: Colors.black),
+            textScaleFactor: 1,
+            style: TextStyle(fontFamily: 'Urbanist-Regular', fontSize:24, fontWeight: FontWeight.w700, color: AppColors.appTextPrimaryColor),
             // textAlign: TextAlign.center,
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           Text(
             language.lblOtpSubTitle,
-            style: TextStyle(fontFamily: 'Urbanist-Light', fontSize: 18, fontWeight: FontWeight.w400, color: Colors.black),
+            textScaleFactor: 1,
+            style: TextStyle(fontFamily: 'Urbanist-Regular', fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.appTextPrimaryColor),
           ),
         ],
       ),
@@ -104,14 +96,15 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
       height: 60,
       textStyle: TextStyle(fontFamily: 'Urbanist-Light',fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
       decoration: BoxDecoration(
-        color: Colors.grey.shade50,
+        color: Color(0x12121D0D),
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.black38),
+        // border: Border.all(color: Colors.black38),
       ),
     );
 
     final focusedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration!.copyWith(
+        color: Colors.white,
         border: Border.all(color: Color.fromRGBO(114, 178, 238, 1)),
       ),
     );

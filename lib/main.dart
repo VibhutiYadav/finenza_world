@@ -3,6 +3,7 @@ import 'package:finenza_world/locale/languages_en.dart';
 import 'package:finenza_world/screens/splash_screen.dart';
 import 'package:finenza_world/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 
@@ -10,6 +11,7 @@ import 'package:get/get.dart';
 BaseLanguage language = LanguagesEn();
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: AppColors.primaryColor ));
   runApp(const MyApp());
 }
 
@@ -19,15 +21,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Finenza World',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF004E99)),
 
           useMaterial3: true,
-       // primarySwatch:  MaterialColor(
-       //  
-       // )
       ),
       home: SplashScreen(),
     );

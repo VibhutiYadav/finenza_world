@@ -9,11 +9,24 @@ import '../../../utils/configs.dart';
 import '../otp_verification_screen.dart';
 
 class SignInController extends GetxController {
+  final RxBool socialLoginStatus = false.obs;
+  final RxBool googleLoginStatus = false.obs;
+  final RxBool otpLoginStatus = false.obs;
+  final RxBool isIOS = false.obs;
+  final RxBool appleLoginStatus = false.obs;
   final TextEditingController numberController = TextEditingController();
   final selectedCountry = defaultCountry().obs;
 
   void otpSignIn() {
     Get.to(()=>OTPVerificationScreen());
+  }
+
+  void googleSignIn() {
+
+  }
+
+  void appleSign() {
+
   }
 }
 

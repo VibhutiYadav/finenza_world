@@ -59,30 +59,35 @@ class _WalkThroughScreenState extends State<WalkThroughScreen> {
                     children: [
                       Image.asset(page['image']!, height: MediaQuery.of(context).size.height * 0.40),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(0,120,0,0),
+                        padding: const EdgeInsets.fromLTRB(0,90,0,0),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                   page['title']!,
+                                  textScaleFactor: 1,
                                   style: TextStyle(fontFamily: 'Urbanist-Regular',fontWeight: FontWeight.w400, fontSize: 30)
                               ),
-                              SizedBox(height: 10),
+                              SizedBox(height: 5),
                               Text(
                                   page['title1']!,
+                                  textScaleFactor: 1,
                                   style: TextStyle(fontFamily: 'Urbanist-Bold',fontWeight: FontWeight.w700, fontSize: 30, color: Color(0xFF004E99))
                               ),
                               SizedBox(height: 10),
                               Text(
                                   page['subTitle']!,
+                                  textScaleFactor: 1,
                                   style: TextStyle(fontFamily: 'Urbanist-Light',fontWeight: FontWeight.w400, fontSize: 15)
                               ),
                               Text(
                                   page['subTitle1']!,
+                                  textScaleFactor: 1,
                                   style: TextStyle(fontFamily: 'Urbanist-Light',fontWeight: FontWeight.w400, fontSize: 15)
                               ),
                               Text(
                                   page['subTitle11'] != null && page['subTitle11']!.isNotEmpty ? page['subTitle11']! : "",
+                                  textScaleFactor: 1,
                                   style: TextStyle(fontFamily: 'Urbanist-Light',fontWeight: FontWeight.w400, fontSize: 15)
                               ),
                             ]
@@ -95,7 +100,7 @@ class _WalkThroughScreenState extends State<WalkThroughScreen> {
             ),
           ),
           Positioned(
-            bottom: 16,
+            bottom: 22,
             left: 16,
             right: 16,
             child: Column(
@@ -105,29 +110,37 @@ class _WalkThroughScreenState extends State<WalkThroughScreen> {
                   child: Obx(() => Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SmoothPageIndicator(
-                        controller: PageController(),
-                        count: pages.length,
-                        effect: WormEffect(
-                          dotWidth: 30,
-                          dotHeight: 5,
-                          activeDotColor: AppColors.primaryColor,
-                          dotColor: AppColors.primaryColor.withOpacity(0.5),
+                      Obx(() => SmoothPageIndicator(
+                        controller: PageController(
+                          initialPage: controller.currentIndex.value    ,
+                          onAttach: (position) {
+                            controller.currentIndex.value;
+                          },
                         ),
-                      ),
+                        count: pages.length,
+                        effect: ExpandingDotsEffect(
+                          dotWidth: 25,
+                          dotHeight: 7,
+                          dotColor:  AppColors.primaryColor.withOpacity(0.5),
+                          activeDotColor: AppColors.secondaryColor,
+                        ),
+                      ),),
                       SizedBox(width: 30),
                       MaterialButton(
+                        height: 40,
                         onPressed: controller.currentIndex.value == 0
                             ? controller.onSkipPressed
                             : controller.onNextPressed,
-                        color: Color(0xFF004E99),
+                        color: AppColors.secondaryColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                         child: Text(
                           controller.currentIndex.value == 0 ? language.skip : language.btnNext,
+                          textScaleFactor: 1,
                           style: TextStyle(
                             fontFamily: 'Urbanist-Light',
+                            fontSize: 15,
                             fontWeight: FontWeight.w400,
                             color: Colors.white,
                           ),
