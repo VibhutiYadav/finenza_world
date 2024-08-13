@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:finenza_world/utils/colors.dart';
-import 'package:finenza_world/utils/images.dart';
+import 'package:finenza_world/utils/helpers/colors.dart';
+import 'package:finenza_world/utils/helpers/images.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -134,7 +134,7 @@ class LanguagesEn extends BaseLanguage {
   String get lbltermsConditions => 'Terms & Conditions';
 
   @override
-  String get lblcreditscreen => 'Your credit score insights ';
+  String get lblcreditScoreInsights => 'Your credit score insights ';
 
   @override
   String get lblfeatures => 'Features';
@@ -144,5 +144,17 @@ class LanguagesEn extends BaseLanguage {
 
   @override
   String get lblmaxTenure => 'Maximum Tenure';
+
+  @override
+  String get lblloan => 'Loans';
+
+  @override
+  String get lblcreditcard =>'Credit Card';
+
+  @override
+  String get lblinsurance => 'Insurance';
+
+  @override
+  String get lblemiCalc => 'EMI Calculator';
 
 }

@@ -1,10 +1,13 @@
+import 'package:finenza_world/binding/splash/splash_binding.dart';
 import 'package:finenza_world/locale/languages.dart';
 import 'package:finenza_world/locale/languages_en.dart';
-import 'package:finenza_world/screens/splash_screen.dart';
-import 'package:finenza_world/utils/colors.dart';
+import 'package:finenza_world/utils/helpers/colors.dart';
+import 'package:finenza_world/utils/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
+import 'features/splash/view/splash_screen.dart';
 
 
 //Region GlobalVariables
@@ -28,7 +31,9 @@ class MyApp extends StatelessWidget {
 
           useMaterial3: true,
       ),
-      home: SplashScreen(),
+      initialRoute: '/splash',
+      getPages: AppRoutes.pages,
+      initialBinding: SplashBinding(),
     );
   }
 }

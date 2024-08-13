@@ -48,9 +48,13 @@ abstract class BaseLanguage {
   String get lblenterPan;
   String get lblagree;
   String get lbltermsConditions;
-  String get lblcreditscreen ;
+  String get lblcreditScoreInsights;
   String get lblfeatures ;
   String get lblloanAmount;
   String get lblmaxTenure;
+  String get lblloan;
+  String get lblcreditcard;
+  String get lblinsurance;
+  String get lblemiCalc;
 
 }

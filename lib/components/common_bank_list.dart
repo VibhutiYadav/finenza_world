@@ -1,11 +1,8 @@
-import 'package:finenza_world/screens/dashboard/home_screen.dart';
-import 'package:finenza_world/screens/services/credit_card/credit_card_application_screen.dart';
-import 'package:finenza_world/screens/services/loan/loan_application_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../utils/colors.dart';
-import 'controller/common_banklist_builder.dart';
+import '../utils/helpers/colors.dart';
+import 'controller/common_banklist_controller.dart';
 
 class CommonBankList extends StatelessWidget {
   final String title;

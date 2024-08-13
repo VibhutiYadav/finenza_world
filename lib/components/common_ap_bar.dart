@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../../utils/colors.dart';
+import '../utils/helpers/colors.dart';
 class CommonAppBar extends StatelessWidget {
   final String title;
 
